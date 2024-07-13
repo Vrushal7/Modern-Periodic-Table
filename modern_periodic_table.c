@@ -379,11 +379,11 @@ int choice;
 
         if (choice >= 1 && choice <= 118) {
             element_info(choice);
-        } else if (choice > 118) {
-            printf("You entered a number greater than 118. Exiting...\n");
+        } else if (choice > 118 || choice<1) {
+            printf("Invalid atomic number. Please enter a number between 1 and 118.\n");
             break; 
         } else {
-            printf("Invalid atomic number. Please enter a number between 1 and 118.\n");
+            printf("Please enter a number between 1 and 118.\n");
         }
     }
 
