@@ -368,25 +368,24 @@ int element_info(int num)
 
 int main()
 {
-    int choice;
+int choice;
     while (1) {
-        printf("Enter the atomic number of an element: ");
-        if (scanf("%d", &choice) != 1) 
-        {
-            while (getchar() != '\n');
+        printf("Enter the atomic number of an element (1-118): ");
+        if (scanf("%d", &choice) != 1) {
+            while (getchar() != '\n'); 
             printf("Invalid input. Please enter a valid number.\n");
             continue;
         }
 
-        if (choice<=118 && choice>=0) {
+        if (choice >= 1 && choice <= 118) {
             element_info(choice);
+        } else if (choice > 118) {
+            printf("You entered a number greater than 118. Exiting...\n");
             break; 
         } else {
-            printf("Elements in Modern periodic table are upto 118.\nEnter a valid atomic number!\n");
+            printf("Invalid atomic number. Please enter a number between 1 and 118.\n");
         }
     }
 
-        return 0;
-
-
+    return 0;
 }
